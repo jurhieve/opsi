@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAJABOX - Religious Academics Journey</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+        color: #222;
+        line-height: 1.7;
+      }
+      nav {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .nav-inner {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 18px;
+      }
+      .logo a {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        color: #876a4c;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      .menu ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+      }
+      .menu a {
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        color: #444;
+      }
+      .menu a:hover,
+      .menu a.active {
+        background: #724e27;
+        color: #fff;
+      }
+      .wrapper {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+      .main {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        min-height: 400px;
+      }
+      .section-title {
+        font-weight: 700;
+        color: #876a4c;
+        margin-bottom: 15px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 8px 14px;
+        background: #876a4c;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        margin: 6px 0 12px;
+        font-size: 14px;
+      }
+      iframe {
+        border-radius: 8px;
+      }
+      .hidden {
+        display: none;
+      }
+      pre {
+        white-space: pre-wrap;
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <div class="logo"><a href="#" data-key="default">RAJABOX</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="#" data-key="masukan" class="nav-link">MASUKAN</a></li>
+            <li><a href="#" data-key="ilmu" class="nav-link">ILMU</a></li>
+            <li>
+              <a href="#" data-key="videopembelajaran" class="nav-link"
+                >VIDEO PEMBELAJARAN</a
+              >
+            </li>
+            <li><a href="#" data-key="sejarah" class="nav-link">SEJARAH</a></li>
+            <li><a href="#" data-key="baca" class="nav-link">BACA</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="wrapper">
+      <main id="main-content" class="main" tabindex="0" aria-live="polite">
+        <!-- default konten -->
+        <h2 class="section-title">Selamat datang di RAJABOX</h2>
+        <p>Silahkan Pilih menu di atas untuk menampilkan konten.</p>
+      </main>
+    </div>
+
+    <script>
+      const contentMap = {
+        default: `
+              <h2 class="section-title">Selamat datang di RAJABOX</h2>
+              <p>RAJABOX adalah platform pembelajaran agama dengan aksesibilitas untuk penyandang disabilitas.</p>
+              <p>Silakan pilih menu di atas untuk mulai belajar.</p>
+            `,
+        masukan: `
+              <h2 class="section-title">Masukan untuk RAJABOX</h2>
+              <p>Kami terbuka menerima saran Anda. Silakan isi form berikut:</p>
+              <form id="feedback-form">
+                <label>Nama (opsional)</label>
+                <input type="text" placeholder="Nama Anda">
+                <label>Masukan / Saran</label>
+                <textarea required placeholder="Tuliskan masukan Anda..."></textarea>
+                <button type="submit" class="btn">Kirim</button>
+              </form>
+              <div id="feedback-ok" class="hidden">✅ Terima kasih, masukan Anda sudah tersimpan (simulasi).</div>
+            `,
+        ilmu: `
+              <h2 class="section-title">Ilmu</h2>
+              <p>Materi yang tersedia:</p>
+              <ul>
+                <li>Aqidah & Ibadah</li>
+                <li>Fiqh & Akhlak</li>
+                <li>Tafsir singkat & Hadis pilihan</li>
+              </ul>
+              <p>Semua modul dilengkapi teks besar, audio narasi, dan transkrip.</p>
+            `,
+        videopembelajaran: `
+              <h2 class="section-title">Video Pembelajaran</h2>
+              <p>Berikut contoh video interaktif dari YouTube:</p>
+              <iframe width="100%" height="420" src="C:\Users\ERLI J\Download" allowfullscreen></iframe>
+          <video width="640" height="360" autoplay muted loop>  <source src="video.mp4" type="video/mp4"></video>
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/vyVpRiqOvt4" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="https://youtu.be/3lY3CvCoT3U?si=nD3aQOLi8OiNVWBe" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/z1Ck5HcYw3s" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="https://youtu.be/3lY3CvCoT3U" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="video/video1.mp4" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="" allowfullscreen></iframe>
+          <iframe width="100%" height="360" src="" allowfullscreen></iframe>
+          <div class="video-list">
+              <p style="margin-top:12px;">Tambahkan link video YouTube lain dengan mengganti URL di kode.
+              </p>
+            `,
+        sejarah: `
+              <h2 class="section-title">Sejarah Islam</h2>
+              <p>Pilih topik sejarah:</p>
+              <select id="history-select">
+                <option value="">-- Pilih Topik --</option>
+                <option value="nabi">Kisah Nabi Muhammad SAW</option>
+                <option value="hijrah">Hijrah ke Madinah</option>
+                <option value="khulafa">Masa Khulafaur Rasyidin</option>
+              </select>
+              <div id="history-content" style="margin-top:12px;"></div>
+            `,
+        baca: `
+              <h2 class="section-title">Baca Al-Qur'an</h2>
+              <p>Pilih surah untuk dibaca:</p>
+              <select id="quran-select">
+                <option value="">-- Pilih Surah --</option>
+                <option value="Al-Baqarah">Al-Baqarah</option>
+                <option value="Ali Imran">Ali Imran</option>
+                <option value="An-Nisa">An-Nisa</option>
+                <option value="Al-Maidah">Al-Maidah</option>
+                <option value="Yasin">Yasin</option>
+                <option value="Al-Ikhlas">Al-Ikhlas</option>
+                <option value="An-Nas">An-Nas</option>
+              </select>
+              <div id="quran-content" style="margin-top:12px;"></div>
+            `,
+      };
+
+      // handler tampilkan konten
+      function showContent(key) {
+        const main = document.getElementById("main-content");
+        main.innerHTML = contentMap[key] || contentMap["default"];
+        main.focus();
+
+        // form masukan
+        const form = document.getElementById("feedback-form");
+        if (form) {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            document.getElementById("feedback-ok").classList.remove("hidden");
+            form.reset();
+          });
+        }
+
+        // sejarah
+        const selectHistory = document.getElementById("history-select");
+        if (selectHistory) {
+          selectHistory.addEventListener("change", (e) => {
+            const v = e.target.value;
+            const box = document.getElementById("history-content");
+            if (v === "nabi")
+              box.innerHTML =
+                "<p>Nabi Muhammad SAW lahir pada hari Senin, 12 Rabiul Awal Tahun Gajah</p>";
+            else if (v === "hijrah")
+              box.innerHTML =
+                "<p>Hijrah ke Madinah menjadi titik balik penting perkembangan Islam...</p>";
+            else if (v === "khulafa")
+              box.innerHTML =
+                "<p>Masa Khulafaur Rasyidin meliputi kepemimpinan Abu Bakar, Umar, Utsman, dan Ali...</p>";
+            else box.innerHTML = "";
+          });
+        }
+
+        // baca Qur'an
+        const selectQuran = document.getElementById("quran-select");
+        if (selectQuran) {
+          selectQuran.addEventListener("change", (e) => {
+            const v = e.target.value;
+            const box = document.getElementById("quran-content");
+            if (v === "Al-Baqarah")
+              box.innerHTML =
+                "<pre>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ... (teks Al-Baqarah)</pre>";
+            else if (v === "Al-Ikhlas")
+              box.innerHTML = "<pre>قُلْ هُوَ اللَّهُ أَحَدٌ...</pre>";
+            else if (v === "An-Nas")
+              box.innerHTML = "<pre>قُلْ أَعُوذُ بِرَبِّ النَّاسِ...</pre>";
+            else box.innerHTML = "<p>Silakan pilih surah.</p>";
+          });
+        }
+
+        // update menu aktif
+        document.querySelectorAll(".nav-link").forEach((a) => {
+          a.classList.toggle("active", a.dataset.key === key);
+        });
+      }
+
+      // klik menu
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest("a.nav-link");
+        if (!a) return;
+        e.preventDefault();
+        showContent(a.dataset.key);
+      });
+
+      showContent("default");
+    </script>
+  </body>
+</html>
